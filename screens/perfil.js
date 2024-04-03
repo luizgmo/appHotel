@@ -26,8 +26,14 @@ const Perfil = ({ navigation }) => {
 
         <View style={styles.containerBaixo}>
           <Text style={styles.nome}>Luiza Pereira</Text>
-          <Text style={styles.setor}>Setor: TI SOFTWARE</Text>
-          <Text style={styles.cargo}>Cargo: PROGRAMADORA</Text>
+          <View style={styles.row}>
+            <Text style={styles.setor}>Setor: </Text>
+            <Text style={styles.setorTxt}>TI SOFTWARE</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.cargo}>Cargo: </Text>
+            <Text style={styles.cargoTxt}>PROGRAMADORA</Text>
+          </View>
 
           <View style={styles.opcoes}>
             <View style={styles.escala}>
@@ -49,10 +55,10 @@ const Perfil = ({ navigation }) => {
           </View>
 
           <TouchableOpacity onPress={() => { navigation.navigate("Home") }}>
-          <View style={styles.sair}>
-            <Image source={require("../assets/interfacelogout.png")} style={styles.sairIcon} />
-            <Text style={styles.sairText}>SAIR</Text>
-          </View>
+            <View style={styles.sair}>
+              <Image source={require("../assets/interfacelogout.png")} style={styles.sairIcon} />
+              <Text style={styles.sairText}>SAIR</Text>
+            </View>
           </TouchableOpacity>
 
         </View>
@@ -112,11 +118,21 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 50,
   },
+  setorTxt: {
+    color: "#000",
+    fontSize: 20,
+    marginTop: 30,
+  },
   cargo: {
     color: "#000",
     fontSize: 20,
     marginTop: 10,
     marginLeft: 50,
+  },
+  cargoTxt: {
+    color: "#000",
+    fontSize: 20,
+    marginTop: 10,
   },
   opcoes: {
     flexDirection: 'row',
@@ -163,6 +179,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 36,
   },
+  row: {
+    flexDirection: 'row',
+  }
 
 
 });

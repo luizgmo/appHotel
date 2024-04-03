@@ -6,6 +6,7 @@ import pedidos from './screens/pedidos';
 import menuCompra from './screens/menuCompra';
 import perfil from './screens/perfil';
 import curriculo from './screens/curriculo'
+import detalhesPedido from './screens/detalhesPedido'
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,11 @@ const App = () => {
         <Stack.Screen
           name="Curriculo"
           component={curriculo}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DetalhesPedido"
+          component={detalhesPedido}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

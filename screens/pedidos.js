@@ -3,82 +3,87 @@ import { View, StyleSheet, Image, Text, ScrollView, TouchableOpacity } from "rea
 
 const Pedidos = ({ navigation }) => {
   const pedidosData = [
-    { key: '1', item: 'Peixe', quantidade: '1 Kg', fornecedor: 'Frigol', comprado: '10/03/2010', entrega: '20/03/2010', logo: require("../assets/peixe.png") },
-    { key: '2', item: 'Cerveja', quantidade: '20 L', fornecedor: 'Ambev', comprado: '10/03/2010', entrega: '20/03/2010', logo: require("../assets/cerveja.png") },
-    { key: '3', item: 'Repelente', quantidade: '10', fornecedor: 'Unileven', comprado: '10/03/2010', entrega: '20/03/2010', logo: require("../assets/repelente.png") },
-    { key: '4', item: 'Ração', quantidade: '20 Kg', fornecedor: 'PetZ', comprado: '10/03/2010', entrega: '20/03/2010', logo: require("../assets/racao.png") },
+    { key: '1', item: 'Peixe', quantidade: '1 Kg', obsC: 'Reposição Manual', obsS: 'Urgente', fornecedor: 'Frigol', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Restaurante', logo: require("../assets/peixe.png") },
+    { key: '2', item: 'Cerveja', quantidade: '20 L', obsC: 'Reposição Manual', obsS: 'Urgente', fornecedor: 'Ambev', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Restaurante', logo: require("../assets/cerveja.png") },
+    { key: '3', item: 'Repelente', quantidade: '10', obsC: 'Reposição Manual', obsS: 'Urgente', fornecedor: 'Unileven', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Fazenda', logo: require("../assets/repelente.png") },
+    { key: '4', item: 'Ração', quantidade: '20 Kg', obsC: 'Reposição Manual', obsS: 'Urgente', fornecedor: 'PetZ', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Fazenda', logo: require("../assets/racao.png") },
   ];
 
   const programadosData = [
-    { key: '1', item: 'Feno', quantidade: '200 Fardos', fornecedor: 'Pastoria', comprado: '10/03/2010', entrega: '20/03/2010', logo: require("../assets/feno.png") },
-    { key: '2', item: 'Parafuso', quantidade: '100', fornecedor: 'Irmãos Rossi', comprado: '10/03/2010', entrega: '20/03/2010', logo: require("../assets/parafuso.png") },
+    { key: '1', item: 'Feno', quantidade: '200 Fardos', obsC: 'Reposição Automática', obsS: 'Não Urgente', fornecedor: 'Pastoria', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Fazenda', logo: require("../assets/feno.png") },
+    { key: '2', item: 'Parafuso', quantidade: '100', obsC: 'Reposição Automática', obsS: 'Não Urgente', fornecedor: 'Irmãos Rossi', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Oficina', logo: require("../assets/parafuso.png") },
   ];
+  
 
   const renderPedidos = () => {
     return pedidosData.map((item) => (
-      <View key={item.key} style={styles.pedidoContainer}>
-        <View style={styles.circleContainer}>
-          <View style={styles.imgContainer}>
-            <Image source={item.logo} style={styles.img} />
+      <TouchableOpacity onPress={() => { navigation.navigate("DetalhesPedido", { item: item }) }} key={item.key} style={styles.pedidoContainer}>
+        <View key={item.key} style={styles.pedidoContainer}>
+          <View style={styles.circleContainer}>
+            <View style={styles.imgContainer}>
+              <Image source={item.logo} style={styles.img} />
+            </View>
+          </View>
+          <View style={styles.pedidoInfo}>
+            <View style={styles.row}>
+              <Text>Produto: </Text>
+              <Text style={styles.itemTxt}>{item.item}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Quantidade: </Text>
+              <Text style={styles.itemTxt}>{item.quantidade}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Fornecedor: </Text>
+              <Text style={styles.itemTxt}>{item.fornecedor}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Comprado: </Text>
+              <Text style={styles.itemTxt}>{item.comprado}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Entrega: </Text>
+              <Text style={styles.itemTxt}>{item.entrega}</Text>
+            </View>
           </View>
         </View>
-        <View style={styles.pedidoInfo}>
-          <View style={styles.row}>
-            <Text>Produto: </Text>
-            <Text style={styles.itemTxt}>{item.item}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Quantidade: </Text>
-            <Text style={styles.itemTxt}>{item.quantidade}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Fornecedor: </Text>
-            <Text style={styles.itemTxt}>{item.fornecedor}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Comprado: </Text>
-            <Text style={styles.itemTxt}>{item.comprado}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Entrega: </Text>
-            <Text style={styles.itemTxt}>{item.entrega}</Text>
-          </View>
-        </View>
-      </View>
+      </TouchableOpacity>
     ));
   };
 
   const renderProgramados = () => {
     return programadosData.map((item) => (
-      <View key={item.key} style={styles.pedidoContainer}>
-        <View style={styles.circleContainer}>
-          <View style={styles.imgContainer}>
-            <Image source={item.logo} style={styles.img} />
+      <TouchableOpacity onPress={() => { navigation.navigate("DetalhesPedido", { item: item }) }} key={item.key} style={styles.pedidoContainer}>
+        <View key={item.key} style={styles.pedidoContainer}>
+          <View style={styles.circleContainer}>
+            <View style={styles.imgContainer}>
+              <Image source={item.logo} style={styles.img} />
+            </View>
+          </View>
+          <View style={styles.pedidoInfo}>
+            <View style={styles.row}>
+              <Text>Produto: </Text>
+              <Text style={styles.itemTxt}>{item.item}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Quantidade: </Text>
+              <Text style={styles.itemTxt}>{item.quantidade}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Fornecedor: </Text>
+              <Text style={styles.itemTxt}>{item.fornecedor}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Comprado: </Text>
+              <Text style={styles.itemTxt}>{item.comprado}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text>Entrega: </Text>
+              <Text style={styles.itemTxt}>{item.entrega}</Text>
+            </View>
           </View>
         </View>
-        <View style={styles.pedidoInfo}>
-          <View style={styles.row}>
-            <Text>Produto: </Text>
-            <Text style={styles.itemTxt}>{item.item}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Quantidade: </Text>
-            <Text style={styles.itemTxt}>{item.quantidade}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Fornecedor: </Text>
-            <Text style={styles.itemTxt}>{item.fornecedor}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Comprado: </Text>
-            <Text style={styles.itemTxt}>{item.comprado}</Text>
-          </View>
-          <View style={styles.row}>
-            <Text>Entrega: </Text>
-            <Text style={styles.itemTxt}>{item.entrega}</Text>
-          </View>
-        </View>
-      </View>
+      </TouchableOpacity>
     ));
   };
 
@@ -177,7 +182,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 5,
     marginBottom: 10,
     marginTop: 10,
   },
@@ -187,7 +192,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    justifyContent:'space-between',
+    justifyContent: 'space-between',
   },
   itemTxt: {
     fontWeight: 'bold',

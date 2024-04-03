@@ -25,7 +25,7 @@ const Curriculo = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <View style={styles.img2Container}>
-                        <TouchableOpacity onPress={() => {  }}>
+                        <TouchableOpacity onPress={() => { }}>
                             <Image source={require("../assets/calendaralt2.png")} style={styles.image2} />
                         </TouchableOpacity>
                     </View>
@@ -37,19 +37,51 @@ const Curriculo = ({ navigation }) => {
 
                 <View style={styles.containerBaixo}>
                     <Text style={styles.nome}>Luiza Pereira</Text>
-                    <Text style={styles.setor}>Setor: TI SOFTWARE</Text>
-                    <Text style={styles.cargo}>Cargo: PROGRAMADORA</Text>
+                    <View style={styles.row}>
+                        <Text style={styles.setor}>Setor: </Text>
+                        <Text style={styles.setorTxt}>TI SOFTWARE</Text>
+                    </View>
+
+                    <View style={styles.row}>
+                        <Text style={styles.cargo}>Cargo: </Text>
+                        <Text style={styles.cargoTxt}>PROGRAMADORA</Text>
+                    </View>
 
                     <View style={styles.dados}>
                         <Text style={styles.dadosTitle}>Dados do Currículo:</Text>
-                        <Text style={styles.dadosTxt}>Idade: 26</Text>
-                        <Text style={styles.dadosTxt}>RG: 99.999.999-9</Text>
-                        <Text style={styles.dadosTxt}>CPF: 999.999.999-99</Text>
-                        <Text style={styles.dadosTxt}>CDT: 1234567</Text>
-                        <Text style={styles.dadosTxt}>NOME DA MÃE: CLEUSA SILVA</Text>
-                        <Text style={styles.dadosTxt}>NOME DO PAI: CLEBE PEREIRA</Text>
-                        <Text style={styles.dadosTxt}>CONTATO: (89)97345-5891</Text>
-                        <Text style={styles.dadosTxt}>E-MAIL: LUIZA@GMAIL.COM</Text>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>Idade: </Text>
+                            <Text style={styles.dadosTxt}>26</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>RG: </Text>
+                            <Text style={styles.dadosTxt}>99.999.999-9</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>CPF: </Text>
+                            <Text style={styles.dadosTxt}>999.999.999-99</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>CDT: </Text>
+                            <Text style={styles.dadosTxt}>1234567</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>NOME DA MÃE: </Text>
+                            <Text style={styles.dadosTxt}>CLEUSA SILVA</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>NOME DO PAI: </Text>
+                            <Text style={styles.dadosTxt}>CLEBE PEREIRA</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>CONTATO: </Text>
+                            <Text style={styles.dadosTxt}>(89)97345-5891</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.dadosTxt}>E-MAIL: </Text>
+                            <Text style={styles.dadosTxt}>LUIZA@GMAIL.COM</Text>
+                        </View>
+
                     </View>
 
                     <View style={styles.tempo}>
@@ -130,11 +162,23 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 50,
     },
+    setorTxt: {
+        color: "#000",
+        fontSize: 16,
+        marginTop: 10,
+        fontWeight: "bold",
+    },
     cargo: {
         color: "#000",
         fontSize: 16,
         marginTop: 10,
         marginLeft: 50,
+    },
+    cargoTxt: {
+        color: "#000",
+        fontSize: 16,
+        marginTop: 10,
+        fontWeight: "bold",
     },
     dados: {
         marginTop: 10,
@@ -204,6 +248,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#080061',
         borderRadius: 10,
         padding: 2,
+    },
+    row: {
+        flexDirection: 'row',
     }
 
 
