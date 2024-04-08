@@ -20,9 +20,13 @@ const Curriculo = ({ navigation }) => {
                     useAngle={true}
                     angle={180}
                 >
-                    <TouchableOpacity onPress={() => { navigation.navigate("Perfil") }}>
-                        <Image source={require("../assets/arrow3.png")} style={styles.image} />
-                    </TouchableOpacity>
+                    <View style={styles.arrowContainer}>
+                        <TouchableOpacity onPress={() => { navigation.navigate("Perfil") }}>
+
+                            <Image source={require("../assets/arrow3.png")} style={styles.arrowImg} />
+
+                        </TouchableOpacity>
+                    </View>
 
                     <View style={styles.img2Container}>
                         <TouchableOpacity onPress={() => { }}>
@@ -145,6 +149,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 2,
 
+    },
+    arrowContainer: {
+        width: 70,
+        height: 70,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    arrowImg: {
+        width: 70,
+        height: 70,
     },
     userpersonIcon: {
         width: 150,

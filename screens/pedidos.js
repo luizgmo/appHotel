@@ -13,7 +13,7 @@ const Pedidos = ({ navigation }) => {
     { key: '1', item: 'Feno', quantidade: '200 Fardos', obsC: 'Reposição Automática', obsS: 'Não Urgente', fornecedor: 'Pastoria', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Fazenda', logo: require("../assets/feno.png") },
     { key: '2', item: 'Parafuso', quantidade: '100', obsC: 'Reposição Automática', obsS: 'Não Urgente', fornecedor: 'Irmãos Rossi', comprado: '10/03/2010', entrega: '20/03/2010', setor: 'Oficina', logo: require("../assets/parafuso.png") },
   ];
-  
+
 
   const renderPedidos = () => {
     return pedidosData.map((item) => (
@@ -132,11 +132,17 @@ const styles = StyleSheet.create({
     marginTop: 50,
     opacity: 0.3,
   },
+  userPersonContainer: {
+    width: 70,
+    height: 70,
+    marginTop: 10,
+    marginLeft: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   arrowImg: {
     width: 70,
     height: 70,
-    top: 5,
-    left: 5,
   },
   content: {
     marginBottom: 20,

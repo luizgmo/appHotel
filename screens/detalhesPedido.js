@@ -57,7 +57,7 @@ const DetalhesPedido = ({ navigation, route }) => {
                 </View>
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => { navigation.navigate("RecebimentoPedido", { item: item }) }} key={item.key} style={styles.configBtn}>
                 <View style={styles.btnChegou}>
                     <Text style={styles.btnTxt}>CHEGOU</Text>
                 </View>
@@ -85,11 +85,17 @@ const styles = StyleSheet.create({
         marginTop: 50,
         opacity: 0.3,
     },
+    userPersonContainer: {
+        width: 70,
+        height: 70,
+        marginTop: 10,
+        marginLeft: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     arrowImg: {
         width: 70,
         height: 70,
-        top: 5,
-        left: 5,
     },
     pedidoInfo: {
         marginLeft: 20,
@@ -123,12 +129,16 @@ const styles = StyleSheet.create({
     btnChegou: {
         backgroundColor: '#00C850',
         width: 250,
-        marginTop: 20,
-        marginBottom: 20,
         borderRadius: 30,
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
+        alignSelf: 'center',
+    },
+    configBtn: {
+        width: 250,
+        marginTop: 20,
+        marginBottom: 20,
         alignSelf: 'center',
     },
     btnTxt: {

@@ -18,7 +18,7 @@ const Perfil = ({ navigation }) => {
           useAngle={true}
           angle={180}
         >
-          <TouchableOpacity onPress={() => { }}>
+          <TouchableOpacity style={styles.configBtn} onPress={() => { }}>
             <Image source={require("../assets/group-29.png")} style={styles.image} />
           </TouchableOpacity>
 
@@ -38,7 +38,7 @@ const Perfil = ({ navigation }) => {
           <View style={styles.opcoes}>
             <View style={styles.escala}>
               <View style={styles.fundoAzul}>
-                <TouchableOpacity onPress={() => { }}>
+                <TouchableOpacity onPress={() => { navigation.navigate("Escala") }}>
                   <Image source={require("../assets/calendaralt1.png")} />
                 </TouchableOpacity>
               </View>
@@ -54,7 +54,7 @@ const Perfil = ({ navigation }) => {
             </View>
           </View>
 
-          <TouchableOpacity onPress={() => { navigation.navigate("Home") }}>
+          <TouchableOpacity style={styles.btnSair} onPress={() => { navigation.navigate("Home") }}>
             <View style={styles.sair}>
               <Image source={require("../assets/interfacelogout.png")} style={styles.sairIcon} />
               <Text style={styles.sairText}>SAIR</Text>
@@ -88,6 +88,19 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: "100%",
     backgroundColor: "transparent",
+  },
+  configBtn: {
+    width: 70,
+    height: 70,
+    marginTop: 10,
+    marginLeft: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  image: {
+    width: 70,
+    height: 70,
   },
   userpersonContainer: {
     position: 'absolute',
@@ -164,13 +177,18 @@ const styles = StyleSheet.create({
   sair: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 50,
     backgroundColor: '#FF0000',
     width: 208,
     alignItems: 'center',
     alignSelf: 'center',
     borderRadius: 50,
   },
+  btnSair: {
+    marginTop: 50,
+    width: 208,
+    alignSelf: 'center',
+  },
+
   sairIcon: {
     width: 75,
     height: 62,

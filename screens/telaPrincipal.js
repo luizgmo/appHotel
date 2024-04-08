@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.contentRow}>
-          <TouchableOpacity onPress={() => { }}>
+          <TouchableOpacity onPress={() => { navigation.navigate("Inventario") }}>
             <View style={styles.blueBox}>
               <Image source={require("../assets/backpack.png")} style={styles.boxIcon} />
             </View>
@@ -47,7 +47,7 @@ const Home = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.contentRow}>
-          <TouchableOpacity onPress={() => { }}>
+          <TouchableOpacity onPress={() => { navigation.navigate("Escala") }}>
             <View style={styles.blueBox}>
               <Image source={require("../assets/calendaralt1.png")} style={styles.boxIcon} />
             </View>
