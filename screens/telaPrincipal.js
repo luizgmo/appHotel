@@ -40,7 +40,7 @@ const Home = ({ navigation }) => {
               <Image source={require("../assets/backpack.png")} style={styles.boxIcon} />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => { }}>
+          <TouchableOpacity onPress={() => { navigation.navigate("Requisicao") }}>
             <View style={styles.blueBox}>
               <Image source={require("../assets/bag.png")} style={styles.boxIcon} />
             </View>

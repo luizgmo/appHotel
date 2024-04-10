@@ -10,6 +10,7 @@ import detalhesPedido from './screens/detalhesPedido'
 import recebimentoPedido from './screens/recebimentoPedido'
 import escala from './screens/escala'
 import inventario from './screens/inventario'
+import requisicao from './screens/requisicao'
 
 const Stack = createStackNavigator();
 
@@ -60,6 +61,11 @@ const App = () => {
         <Stack.Screen
           name="Inventario"
           component={inventario}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Requisicao"
+          component={requisicao}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
