@@ -2,6 +2,8 @@
 
 Este projeto é um aplicativo de gerenciamento de hotel desenvolvido com React Native e Expo. O aplicativo é projetado para otimizar as operações do hotel, permitindo a gestão de reservas, pedidos, inventário, escalas de trabalho e outras funções essenciais.
 
+> ⚠️ **Nota:** Esta é a versão mais básica do projeto, focada na estrutura inicial e nas principais funcionalidades do aplicativo. A aplicação foi disponibilizada utilizando **dados mockados** para fins de demonstração, testes ou validação de interface, sem necessidade de integração completa com o backend.
+
 ## Páginas Principais
 
 - **`curriculo.js`**: Página para gerenciamento de informações curriculares dos funcionários.
